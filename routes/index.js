@@ -14,4 +14,16 @@ router.get("/sign-up", (req, res, next) => {
 router.get("/home", (req, res, next) => {
   res.render("home");
 });
+
+router.get("/user", (req, res, next) => {
+  res.render("user");
+});
+
+router.get("/events", (req, res, next) => {
+  res.render("events");
+});
+
+router.get("/oneEvent", (req, res, next) => {
+  res.render("oneEvent");
+});
 module.exports = router;
