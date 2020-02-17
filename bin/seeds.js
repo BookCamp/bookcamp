@@ -1,11 +1,13 @@
 // To insert in "bin/seeds.js"
 const mongoose = require('mongoose');
 const Student = require('../models/Student');
+
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const plainPassword1 = "123";
 const salt = bcrypt.genSaltSync(saltRounds);
 const hash1 = bcrypt.hashSync(plainPassword1, salt);
+
 const dbtitle = 'bookcamp'
 mongoose.connect(`mongodb://localhost/${dbtitle}`, { useUnifiedTopology: true, useNewUrlParser: true })
 

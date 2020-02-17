@@ -33,13 +33,13 @@ const schools = [
 School.create(schools, (err) => {
   if (err) { throw (err) }
   console.log(`Created ${schools.length} schools`)
-  mongoose.connection.close()
+  // mongoose.connection.close()
 })
   .then(schoolsCreated => {
     Student.findAll()
       .then(studentsFound => {
         studentsFound.forEach(student, idx => {
-          if (idx === 2 || idx === 3) {
+          if (student.course ) {
 
           }
         });
