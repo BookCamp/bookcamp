@@ -13,35 +13,90 @@ const schools = [
     address: "Paseo de la Chopera, 14 C.P: 28045, Madrid",
     contact: "Fran Naranjo",
     yearFoundation: 2013,
-    courses: [{ "name": "Web Development FullStack", "students": [] }, { "name": "UX/UI Design", "students": [] }, { "name": "Data Analytics", "students": [] }]
+    courses: ["Web Development FullStack", "UX/UI Design", "Data Analytics"]
   },
   {
     name: "Neoland",
     address: "Plaza de España, 11 C.P: 28008, Madrid",
     contact: "Maria Simó",
     yearFoundation: 2017,
-    courses: [{ "name": "Web Development FullStack", "students": [] }, { "name": "UX/UI Design", "students": [] }, { "name": "Data Science", "students": [] }, { "name": "Digital Marketing", "students": [] }, { "name": "Mobile Development", "students": [] }, { "name": "Product Management", "students": [] }]
+    courses: ["Web Development", "UX/UI", "Data Science", "Digital Marketing", "Mobile Development", "Product Management"]
   },
   {
     name: "Keepcoding",
     address: "Calle Méndez Álvaro, 20 C.P: 28045, Madrid",
     contact: "Enrique Montaño",
     yearFoundation: 2018,
-    courses: [{ "name": "DevOps Full Stack", "students": [] }, { "name": "Big Data, AI & ML Full Stack", "students": [] }, { "name": "Mobile Full Stack", "students": [] }, { "name": "Web Full Stack", "students": [] }, { "name": "Cybersecurity Full Stack", "students": [] }, { "name": "Aprende a Programar desde Cero", "students": [] }]
+    courses: ["DevOps Full Stack", "Big Data, AI & ML Full Stack", "Mobile Full Stack", "Web Full Stack", "Cybersecurity Full Stack", "Aprende a Programar desde Cero"]
   }
 ]
-School.create(schools, (err) => {
-  if (err) { throw (err) }
-  console.log(`Created ${schools.length} schools`)
-  // mongoose.connection.close()
-})
+School.create(schools)
   .then(schoolsCreated => {
-    Student.findAll()
+    let allSchools = schoolsCreated
+    Student.find()
       .then(studentsFound => {
-        studentsFound.forEach(student, idx => {
-          if (student.course ) {
-
+        studentsFound.forEach((student, idx) => {
+          if (idx <= 3) {
+            Student.findByIdAndUpdate(student._id, { $push: { school: allSchools[0]._id, courses: allSchools[0].courses[0] } })
+              .then()
+          } else if (idx > 3 && idx <= 7) {
+            Student.findByIdAndUpdate(student._id, { $push: { school: allSchools[0]._id, courses: allSchools[0].courses[1] } })
+              .then()
+          } else if (idx > 7 && idx <= 11) {
+            Student.findByIdAndUpdate(student._id, { $push: { school: allSchools[1]._id, courses: allSchools[1].courses[0] } })
+              .then()
+          } else if (idx > 11 && idx <= 15) {
+            Student.findByIdAndUpdate(student._id, { $push: { school: allSchools[1]._id, courses: allSchools[1].courses[3] } })
+              .then()
+          } else if (idx > 15 && idx <= 17) {
+            Student.findByIdAndUpdate(student._id, { $push: { school: allSchools[1]._id, courses: allSchools[1].courses[5] } })
+              .then()
+          } else {
+            Student.findByIdAndUpdate(student._id, { $push: { school: allSchools[2]._id, courses: allSchools[2].courses[0] } })
+              .then()
           }
         });
+      })
+      .then(() => {
+        Student.find({ $or: [{ courses: "Web Development FullStack" }, { courses: "UX/UI Design" }, { courses: "Data Analytics" }] })
+          .then(studentsFound => {
+            studentsFound.forEach(student => {
+              School.findOneAndUpdate({ name: "Ironhack" }, {
+                $push: { studentsCount: student._id }
+              })
+                .then(() => {
+                  console.log("1 student added!")
+                })
+            })
+
+          })
+      })
+      .then(() => {
+        Student.find({ $or: [{ courses: "Web Development" }, { courses: "UX/UI" }, { courses: "Data Science" }, { courses: "Digital Marketing" }, { courses: "Mobile Development" }, { courses: "Product Management" }] })
+          .then(studentsFound => {
+            studentsFound.forEach(student => {
+              School.findOneAndUpdate({ name: "Neoland" }, {
+                $push: { studentsCount: student._id }
+              })
+                .then(() => {
+                  console.log("1 student added!")
+                })
+            })
+
+          })
+      })
+      .then(() => {
+        Student.find({ $or: [{ courses: "DevOps Full Stack" }, { courses: "Big Data, AI & ML Full Stack" }, { courses: "Mobile Full Stack" }, { courses: "Web Full Stack" }, { courses: "Cybersecurity Full Stack" }, { courses: "Aprende a Programar desde Cero" }] })
+          .then(studentsFound => {
+            studentsFound.forEach(student => {
+              School.findOneAndUpdate({ name: "Keepcoding" }, {
+                $push: { studentsCount: student._id }
+              })
+                .then(() => {
+                  console.log("1 student added!")
+                })
+            })
+
+          })
       })
   })
