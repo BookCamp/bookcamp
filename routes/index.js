@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const Student = require("../models/Student.model")
-
+const School = require("../models/School.model")
 
 
 
@@ -48,18 +48,20 @@ router.post("/login", (req, res, next) => {
 });
 
 
-
-
 // Sign up
 router.get("/sign-up", (req, res, next) => {
-  res.render("sign-up");
+  School.find()
+  .then(schools => {
+   res.render("sign-up", {schools}); 
+  })
+  
 });
 
 
 
 //Home
-router.get("/home", (req, res, next) => {
-  res.render("home");
+router.get("/feed", (req, res, next) => {
+  res.render("feed");
 });
 
 
