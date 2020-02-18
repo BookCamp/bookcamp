@@ -1,4 +1,5 @@
 // To insert in "bin/seeds.js"
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Student = require('../models/User')
 
@@ -9,7 +10,7 @@ const salt = bcrypt.genSaltSync(saltRounds);
 const hash1 = bcrypt.hashSync(plainPassword1, salt);
 
 mongoose
-    .connect('mongodb://localhost/bookcamp', { useNewUrlParser: true })
+    .connect(`${process.env.DBLOCAL}`, { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })

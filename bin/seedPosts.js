@@ -1,9 +1,10 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Student = require('../models/User')
 const Post = require('../models/Post.model')
 
 mongoose
-    .connect('mongodb://localhost/bookcamp', { useNewUrlParser: true })
+    .connect(`${process.env.DBLOCAL}`, { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })
