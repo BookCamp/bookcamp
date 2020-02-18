@@ -3,7 +3,7 @@ const Student = require('../models/User')
 const School = require('../models/School.model')
 
 mongoose
-    .connect('mongodb://localhost/testingfran', { useNewUrlParser: true })
+    .connect('mongodb://localhost/bookcamp', { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })

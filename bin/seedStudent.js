@@ -9,7 +9,7 @@ const salt = bcrypt.genSaltSync(saltRounds);
 const hash1 = bcrypt.hashSync(plainPassword1, salt);
 
 mongoose
-    .connect('mongodb://localhost/testingfran', { useNewUrlParser: true })
+    .connect('mongodb://localhost/bookcamp', { useNewUrlParser: true })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
     })
