@@ -77,4 +77,5 @@ router.get("/events", (req, res, next) => {
 router.get("/oneEvent", (req, res, next) => {
   res.render("oneEvent");
 });
+
 module.exports = router;
