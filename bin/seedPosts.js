@@ -1,8 +1,15 @@
 const mongoose = require('mongoose');
-const Student = require('../models/Student.model')
+const Student = require('../models/User')
 const Post = require('../models/Post.model')
-const dbtitle = 'bookcamp'
-mongoose.connect(`mongodb://localhost/${dbtitle}`, { useUnifiedTopology: true, useNewUrlParser: true })
+
+mongoose
+    .connect('mongodb://localhost/testingfran', { useNewUrlParser: true })
+    .then(x => {
+        console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    })
+    .catch(err => {
+        console.error('Error connecting to mongo', err)
+    });
 
 Post.collection.drop()
 
@@ -107,7 +114,3 @@ Post.create(allPosts1)
 
     })
     .then(() => console.log("All Post Created!"))
-
-
-
-
