@@ -1,2 +1,16 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+{{#each posts}}
+<div>{{this.title}}
+    {{this.type}}
+    {{this.url}}
+    {{this.comment}}
+    {{this.file}}
+    <img src="{{this.img}}" alt="Photo">
+    {{this.location}}
+    {{this.creator}}
+    {{this.school}}
+    {{this.course}}
+</div>
+
+{{/each}}

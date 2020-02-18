@@ -6,6 +6,7 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   birthDate: Date,
+  googleID: String,
   school: [{ type: Schema.Types.ObjectId, ref: "School" }],
   courses: [{ type: String }],
   photo: String,
