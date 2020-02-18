@@ -7,7 +7,8 @@ const SchoolSchema = new Schema({
   address: String,
   contact: String,
   yearFoundation: Number,
-  courses: [{ name: String, students: [{ type: Schema.Types.ObjectId, ref: "Student"}]}]
+  courses: [{ type: String }],
+  studentsCount: []
 }, {
   timestamps: true
 });
