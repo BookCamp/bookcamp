@@ -27,7 +27,7 @@ const student = [
         password: hash1,
         birthDate: "1986-05-07",
         course: ["Web Development FullStack"],
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPqEz9hk3cSDBjfP2Rccq0H9EJ1y1x1EMaW9RS7v2IJwHH-lSq",
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582141758/IMG_3849_tyruhw.jpg",
         hobbies: ["tenis", "futbol", "viajar"]
 
 
@@ -38,7 +38,6 @@ const student = [
         password: hash1,
         birthDate: "1984-07-08",
         course: ["Web Development FullStack"],
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQbjAwcsppyMYKIBddIS6AZ0O6c8sSou2tgwy69TswFmJzZL6ne",
         hobbies: ["cine", "senderismo", "musica"]
 
 
@@ -191,7 +190,6 @@ const student = [
         password: hash1,
         birthDate: "1979-10-03",
         course: ["Big Data, AI & ML Full Stack"],
-        photo: "",
         hobbies: ["futbol", "natacion"]
     },
     {

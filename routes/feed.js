@@ -7,7 +7,9 @@ const User = require("../models/User")
 
 /* GET home page */
 router.get("/", ensureLogin.ensureLoggedIn("/"), (req, res, next) => {
+    console.log(req.user)
     Posts.find({ $and: [{ school: req.user.school }, { course: req.user.courses[0] }] })
+
         .populate('school')
         .populate('creator')
         .then(posts => {

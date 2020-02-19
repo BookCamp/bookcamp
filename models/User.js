@@ -9,7 +9,7 @@ const userSchema = new Schema({
   googleID: String,
   school: [{ type: Schema.Types.ObjectId, ref: "School" }],
   courses: [{ type: String }],
-  photo: String,
+  photo: { type: String, default: `https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582141469/photoDefault_qpyvax.png` },
   isActive: Boolean,
   posts: []
 },

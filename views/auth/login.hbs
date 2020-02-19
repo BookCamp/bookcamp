@@ -1,22 +1,43 @@
-<div class="login_body">
-  <img src="/images/bookcamp_logo.svg" class="logo_login" alt="">
-  <form action="/auth/login" method="POST" id="form-container">
-    <div class="button_mail"><input id="username" type="text" name="username" placeholder="EMAIL"></div>
-    <div class="button_password"><input id="password" type="password" name="password" placeholder="PASSWORD"></div>
-    {{#if message }}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
-    <div><button class="button_login">LOG IN</button></div>
+<!DOCTYPE html>
+<html lang="en">
 
-    {{#unless user}}
-    <div class="login_google">
-      <a href="/auth/google"></a>
-    </div>
-    {{/unless}}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{bookcamp}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/reset.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-    <p class="account-message">
-      Don't have an account yet? <a href="/auth/signup">Signup</a>
+<body class="body_pp">
 
-    </p>
-  </form>
-</div>
+
+  <div class="login_body">
+    <img src="/images/bookcamp_logo.svg" class="logo_login" alt="">
+    <form action="/auth/login" method="POST" id="form-container">
+      <div class="button_mail"><input id="username" type="text" name="username" placeholder="EMAIL"></div>
+      <div class="button_password"><input id="password" type="password" name="password" placeholder="PASSWORD"></div>
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <div><button class="button_login">LOG IN</button></div>
+
+      {{#unless user}}
+      <div class="login_google">
+        <a href="/auth/google"></a>
+      </div>
+      {{/unless}}
+
+      <p class="account-message">
+        Don't have an account yet? <a href="/auth/signup">Signup</a>
+
+      </p>
+    </form>
+  </div>
+
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>

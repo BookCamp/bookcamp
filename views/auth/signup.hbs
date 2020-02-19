@@ -1,45 +1,72 @@
-<div class="singup">
-  <img src="/images/bookcamp_logo_verde.svg" class="logo_verde" alt="">
-  <form action="/auth/signup" method="POST" id="form-container">
-    <label for="username">username</label>
-    <input id="username" type="text" name="username" placeholder="username">
-    <img src="/images/line_green.svg" class="linegreen" alt="">
-    <label for="email">email</label>
-    <input id="email" type="email" name="email" placeholder="email">
-    <img src="/images/line_green.svg" class="linegreen line2" alt="">
-    <br><br>
+<!DOCTYPE html>
+<html lang="en">
 
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Your password">
-    <br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{bookcamp}}</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/reset.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-    <select id="schools" name="school">
-      <option value="empty">Select School</option>
+<body class="body_pp">
+
+  <div class="signup">
+    <img src="/images/bookcamp_logo_verde.svg" class="logo_verde" alt="">
+    <form action="/auth/signup" method="POST" id="form-signup">
+      <div>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" placeholder="Name + Surname">
+        <img src="/images/line_green.svg" class="linegreen" alt="">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="email@email.com">
+        <img src="/images/line_green.svg" class="linegreen line2" alt="">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Your Password">
+        <img src="/images/line_green.svg" class="linegreen line2" alt="">
+      </div>
+      <select id="schools" name="school">
+        <option value="empty">Select School</option>
+        {{#each schools}}
+        <option value={{this._id}}>{{this.name}}</option>
+        {{/each}}
+      </select>
+
       {{#each schools}}
-      <option value={{this._id}}>{{this.name}}</option>
+      <select class="hidden {{this.name}} school-option">
+        <option value="school">Select your course</option>
+        {{#each this.courses}}
+        <option>{{this}}</option>
+        {{/each}}
+      </select>
       {{/each}}
-    </select>
 
-    {{#each schools}}
-    <select class="hidden {{this.name}} school-option">
-      <option value="school">Select your course</option>
-      {{#each this.courses}}
-      <option>{{this}}</option>
-      {{/each}}
-    </select>
-    {{/each}}
+      <div>
+        <label for="birthDate">Birth date</label>
+        <input id="birthDate" type="date" name="birthDate" placeholder="birth Date">
+        <img src="/images/line_green.svg" class="linegreen line2" alt="">
+      </div>
 
-    {{#if message }}
-    <div class="error-message">{{ message }}</div>
-    {{/if}}
+      {{#if message }}
+      <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-    <br><br>
+      <div class="bottom_signup">
+        <button>Create account</button>
+        <p class="account-message">
+          Do you already have an account? <a href="/auth/login">Login</a>
+        </p>
+      </div>
+    </form>
+  </div>
 
-    <button>Create account</button>
+  <script src="/javascripts/script.js"></script>
+</body>
 
-    <p class="account-message">
-      Do you already have an account?
-      <a href="/auth/login">Login</a>
-    </p>
-  </form>
-</div>
+</html>

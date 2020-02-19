@@ -10,7 +10,7 @@ const bcryptSalt = 10;
 
 // Log In
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+  res.render("auth/login", { "message": req.flash("error"), layout: false });
 });
 
 router.post("/login", passport.authenticate("local", {
@@ -43,7 +43,7 @@ router.get(
 router.get("/signup", (req, res, next) => {
   School.find()
     .then(schools => {
-      res.render("auth/signup", { schools });
+      res.render("auth/signup", { schools, layout: false });
     })
 
 });
@@ -69,12 +69,12 @@ router.post("/signup", (req, res, next) => {
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
 
-    const newUser = new User ({
+    const newUser = new User({
       username,
       password: hashPass,
       email,
-      school:[school],
-      courses:[courses]
+      school: [school],
+      courses: [courses]
     });
 
     newUser.save()

@@ -1,33 +1,39 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-{{#each posts}}
-<div>
-    <div>
-        {{this.creator.username}}
-        {{this.school.name}}
-        {{this.course}}
+<div class="wrapper">
+    <div class="intWrapper">
+        {{#each posts}}
+        <div class="onePost">
+            <div class="userDataGroup">
+                <img src="{{this.creator.photo}}" class="userPhotoPost" alt="">
+                <div class="userData">
+                    <div class="bold">{{this.creator.username}}</div>
+                    <div>{{this.school.name}}</div>
+                    <div>{{this.course}}</div>
+                </div>
+
+            </div>
+            <div class="postTitle">{{this.title}}</div>
+            <div class="urlImg">
+                {{#if this.url}}
+                <a href="{{this.url}}"><img src="/images/urlImg.svg" alt=""></a>
+                {{/if}}
+            </div>
+            <div>
+                {{#if this.comment}}
+                {{this.comment}}
+                {{/if}}
+            </div>
+            <br>
+            <div class="fileImg">
+                {{#if this.file}}
+                <a href="{{this.file}}"><img src="/images/file.svg" alt=""></a>
+                {{/if}}
+            </div>
+            <div>
+                {{#if this.img}}
+                <img src="{{this.img}}" class="img_feed" alt="Photo">
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
     </div>
-    {{this.title}}
-
-    {{#if this.url}}
-    {{this.url}}
-    {{/if}}
-
-    {{#if this.comment}}
-    {{this.comment}}
-    {{/if}}
-
-
-    {{#if this.file}}
-    {{this.file}}
-    {{/if}}
-
-    {{#if this.img}}
-    <img src="{{this.img}}" alt="Photo">
-    {{/if}}
-
-    {{#if this.location}}
-    {{this.location}}
-    {{/if}}
 </div>
-{{/each}}
