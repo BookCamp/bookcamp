@@ -15,6 +15,7 @@ const flash = require("connect-flash");
 
 
 
+
 mongoose
   .connect(`${process.env.DBLOCAL}`, { useNewUrlParser: true })
   .then(x => {
@@ -75,6 +76,8 @@ app.use(session({
 app.use(flash());
 require('./passport')(app);
 
+const profileRoutes = require('./routes/profile');
+app.use('/profile', profileRoutes);
 
 const index = require('./routes/index');
 app.use('/', index);

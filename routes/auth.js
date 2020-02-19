@@ -30,6 +30,7 @@ router.get("/signup", (req, res, next) => {
   
 });
 router.post("/signup", (req, res, next) => {
+  console.log(req.body)
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
@@ -37,7 +38,7 @@ router.post("/signup", (req, res, next) => {
   const courses = req.body.courses;
 
   if (username === "" || password === "" || email === "" || school === "" || courses === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+    res.render("auth/signup", { message: "All fields are required" });
     return;
   }
 
@@ -50,13 +51,12 @@ router.post("/signup", (req, res, next) => {
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
 
-    const newUser = new User({
+    const newUser = new User ({
       username,
       password: hashPass,
       email,
-      school,
-      courses
-
+      school:[school],
+      courses:[courses]
     });
 
     newUser.save()
@@ -64,7 +64,7 @@ router.post("/signup", (req, res, next) => {
         res.redirect("/");
       })
       .catch(err => {
-        res.render("auth/signup", { message: "Something went wrong" });
+        res.render("auth/signup", { message: err });
       })
   });
 });

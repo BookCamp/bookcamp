@@ -13,16 +13,16 @@
   <input id="password" type="password" name="password" placeholder="Your password">
   <br>
 
-  <select id="schools">
+  <select id="schools" name="school">
     <option value="empty">Select School</option>
   {{#each schools}}
-  <option value={{this.name}} name="school">{{this.name}}</option>
+  <option value={{this._id}}>{{this.name}}</option>
   {{/each}}
 </select>
 
 {{#each schools}}
 <select class="hidden {{this.name}} school-option">
-    <option value="school" name="courses">Select your course</option>
+    <option value="school">Select your course</option>
   {{#each this.courses}}
   <option>{{this}}</option>
   {{/each}}
