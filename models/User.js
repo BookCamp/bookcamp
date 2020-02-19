@@ -6,16 +6,17 @@ const userSchema = new Schema({
   email: { type: String, unique: true },
   password: String,
   birthDate: Date,
-  school: [{ type: Schema.Types.ObjectId, ref: "School" }],
+  school: { type: Schema.Types.ObjectId, ref: "School" },
   courses: [{ type: String }],
   photo: String,
-  hobbies: [],
   isActive: Boolean,
   posts: []
 },
   {
     timestamps: true
   });
+
+
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
