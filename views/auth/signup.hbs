@@ -1,44 +1,45 @@
-<h2>Signup</h2>
+<div class="singup">
+  <img src="/images/bookcamp_logo_verde.svg" class="logo_verde" alt="">
+  <form action="/auth/signup" method="POST" id="form-container">
+    <label for="username">username</label>
+    <input id="username" type="text" name="username" placeholder="username">
+    <img src="/images/line_green.svg" class="linegreen" alt="">
+    <label for="email">email</label>
+    <input id="email" type="email" name="email" placeholder="email">
+    <img src="/images/line_green.svg" class="linegreen line2" alt="">
+    <br><br>
 
-<form action="/auth/signup" method="POST" id="form-container">
-<label for="username">username</label>
-<input id="username" type="text" name="username" placeholder="username">
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" placeholder="Your password">
+    <br>
 
-  <label for="email">email</label>
-  <input id="email" type="email" name="email" placeholder="email">
+    <select id="schools" name="school">
+      <option value="empty">Select School</option>
+      {{#each schools}}
+      <option value={{this._id}}>{{this.name}}</option>
+      {{/each}}
+    </select>
 
-  <br><br>
+    {{#each schools}}
+    <select class="hidden {{this.name}} school-option">
+      <option value="school">Select your course</option>
+      {{#each this.courses}}
+      <option>{{this}}</option>
+      {{/each}}
+    </select>
+    {{/each}}
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
+    {{#if message }}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
 
-  <select id="schools" name="school">
-    <option value="empty">Select School</option>
-  {{#each schools}}
-  <option value={{this._id}}>{{this.name}}</option>
-  {{/each}}
-</select>
+    <br><br>
 
-{{#each schools}}
-<select class="hidden {{this.name}} school-option">
-    <option value="school">Select your course</option>
-  {{#each this.courses}}
-  <option>{{this}}</option>
-  {{/each}}
-</select>
-{{/each}}
+    <button>Create account</button>
 
-  {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
-
-  <br><br>
-
-  <button>Create account</button>
-
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
-  </p>
-</form>
+    <p class="account-message">
+      Do you already have an account?
+      <a href="/auth/login">Login</a>
+    </p>
+  </form>
+</div>

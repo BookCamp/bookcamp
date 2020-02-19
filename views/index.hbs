@@ -3,9 +3,9 @@
 {{#each posts}}
 <div>
     <div>
-        Created by: {{this.creator}}
-        School: {{this.school}}
-        Course: {{this.course}}
+        {{this.creator.username}}
+        {{this.school.name}}
+        {{this.course}}
     </div>
     {{this.title}}
 
@@ -26,11 +26,8 @@
     <img src="{{this.img}}" alt="Photo">
     {{/if}}
 
-    {{!-- {{#if this.location}}
+    {{#if this.location}}
     {{this.location}}
-    {{/if}} --}}
-
-
+    {{/if}}
 </div>
-
 {{/each}}
