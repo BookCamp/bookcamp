@@ -124,6 +124,9 @@ app.use('/feed', feedRoutes);
 const profileRoutes = require('./routes/profile');
 app.use('/profile', profileRoutes);
 
+const createRoutes = require('./routes/create');
+app.use('/create', createRoutes);
+
 
 
 module.exports = app;
