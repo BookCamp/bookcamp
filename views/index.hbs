@@ -1,2 +1,36 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+{{#each posts}}
+<div>
+    <div>
+        Created by: {{this.creator}}
+        School: {{this.school}}
+        Course: {{this.course}}
+    </div>
+    {{this.title}}
+
+    {{#if this.url}}
+    {{this.url}}
+    {{/if}}
+
+    {{#if this.comment}}
+    {{this.comment}}
+    {{/if}}
+
+
+    {{#if this.file}}
+    {{this.file}}
+    {{/if}}
+
+    {{#if this.img}}
+    <img src="{{this.img}}" alt="Photo">
+    {{/if}}
+
+    {{!-- {{#if this.location}}
+    {{this.location}}
+    {{/if}} --}}
+
+
+</div>
+
+{{/each}}

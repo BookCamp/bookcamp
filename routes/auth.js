@@ -8,7 +8,7 @@ const School = require("../models/School.model");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-
+// Log In
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
@@ -20,14 +20,32 @@ router.post("/login", passport.authenticate("local", {
   passReqToCallback: true
 }));
 
+//Log In with Google
+router.get(
+  "/google",
+  passport.authenticate("google", {
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  })
+);
+router.get(
+  "/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/feed",
+    failureRedirect: "/auth/login" // here you would redirect to the login page using traditional login approach
+  })
+);
 
 
+//Sign Up
 router.get("/signup", (req, res, next) => {
   School.find()
-  .then(schools => {
-   res.render("auth/signup", {schools}); 
-  })
-  
+    .then(schools => {
+      res.render("auth/signup", { schools });
+    })
+
 });
 router.post("/signup", (req, res, next) => {
   console.log(req.body)
@@ -68,6 +86,8 @@ router.post("/signup", (req, res, next) => {
       })
   });
 });
+
+
 
 router.get("/logout", (req, res) => {
   req.logout();
