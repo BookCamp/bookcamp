@@ -31,7 +31,7 @@ let post3 = {
 let post4 = {
     title: 'Mirar que escuela he encontrado:',
     type: 'URL',
-    img: 'https://www.ironhack.com/es'
+    url: 'https://www.ironhack.com/es'
 }
 
 const allPosts1 = new Array(20).fill(post1)
