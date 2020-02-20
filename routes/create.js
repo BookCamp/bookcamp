@@ -12,13 +12,11 @@ router.get('/', (req, res, next) => {
 router.post("/", uploadCloud.single('photo'), (req, res, next) => {
 
   const { comment, photo, file, url, type, title } = req.body
-  //console.log(req.body)
   const { school, courses } = req.user
-  // el error esta en la linea de arriba
-  //console.log(req.user)
-  // const creator = req.user._id
+
+
   const imgPath = req.file.url;
-  // const imgName = req.file.originalname;
+
   console.log(req)
   let newPost = {}
   console.log(type)
@@ -37,7 +35,7 @@ router.post("/", uploadCloud.single('photo'), (req, res, next) => {
         title,
         school,
         course: courses[0],
-        imgPath, 
+        imgPath,
       }
       break;
     case "file":
@@ -55,13 +53,9 @@ router.post("/", uploadCloud.single('photo'), (req, res, next) => {
         school,
         course: courses[0],
       }
-    break;
-    }
+      break;
+  }
 
-  // if (title === "" || photo === "" || file === "" || url === "") {
-  //   res.render("create", { message: "All fields are required" });
-  //   return;
-  // }
 
   Post.create(newPost)
     .then(() => {

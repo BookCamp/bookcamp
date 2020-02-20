@@ -12,7 +12,7 @@ const PostSchema = new Schema({
     school: { type: Schema.Types.ObjectId, ref: "School" },
     course: String,
     imgName: String,
-    imgPath: String
+    imgPath: String,
 }, {
     timestamps: true
 });

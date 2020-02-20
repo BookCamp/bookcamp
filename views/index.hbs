@@ -14,7 +14,7 @@
             <div class="postTitle">{{this.title}}</div>
             <div class="urlImg">
                 {{#if this.url}}
-                <a href="{{this.url}}"><img src="/images/urlImg.svg" alt=""></a>
+                <a href="{{this.url}}" target="_blank"><img src="/images/urlImg.svg" alt=""></a>
                 {{/if}}
             </div>
             <div>
@@ -31,6 +31,11 @@
             <div>
                 {{#if this.img}}
                 <img src="{{this.img}}" class="img_feed" alt="Photo">
+                {{/if}}
+            </div>
+            <div>
+                {{#if this.imgPath}}
+                <img src="{{this.imgPath}}" class="img_feed" alt="Photo">
                 {{/if}}
             </div>
         </div>

@@ -110,6 +110,7 @@ router.post("/signup", (req, res, next) => {
       to: 'daniel.ronhacker@gmail.com',
       subject: `lab-nodemailer`,
       text: `esto es Nodemailer`,
+      //change url and text
       html: `<a href="http://localhost:3000/auth/confirm/${confirmationCode}">Esta es Nodemailer</a>`
     })
       .then(info => res.render('message', {
