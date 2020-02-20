@@ -11,7 +11,16 @@ const userSchema = new Schema({
   courses: [{ type: String }],
   photo: { type: String, default: `https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582141469/photoDefault_qpyvax.png` },
   isActive: Boolean,
-  posts: []
+  posts: [],
+  status: {
+    type : String,
+    enum :["Pending Confirmation","Active"],
+    default: `Pending Confirmation`
+  },
+  confirmationCode: {
+    type: String,
+   unique: true },
+  email: String,
 },
   {
     timestamps: true

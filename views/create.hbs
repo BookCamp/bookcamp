@@ -1,0 +1,50 @@
+<h2>create new content</h2>
+
+<a href="" class="btn-content">Comment</a>
+<a href="" class="btn-content">Photo</a>
+<a href="" class="btn-content">File</a>
+<a href="" class="btn-content">Url</a>
+
+<br>
+<br>
+
+
+
+<form class="hidden type-form" action="/create" method="POST" id="comment" enctype="multipart/form-data">
+    <textarea name="title"></textarea>
+    <input type="hidden" value="comment" name="type">
+    <ul class="button">
+        <button type="submit">Create</button>
+    </ul>
+</form>
+
+
+
+<form class="hidden type-form" action="/create" method="POST" id="photo" enctype="multipart/form-data">
+ <input type="hidden" value="photo" name="type">
+<textarea name="title"></textarea>
+<input type="file" name="photo"> 
+<ul class="button">
+    <button type="submit">Create</button>
+</ul>
+</form>
+
+
+<form class="hidden type-form" action="/create" method="POST" id="file" enctype="multipart/form-data">
+ <input type="hidden" value="file" name="type">
+<textarea name="title"></textarea>
+<input type="file">
+<ul class="button">
+    <button type="submit">Create</button>
+</ul>
+</form>
+
+
+<form class="hidden type-form" action="/create" method="POST" id="url" enctype="multipart/form-data">
+ <input type="hidden" value="url" name="type">
+<textarea name="title"></textarea>
+<input type="file">
+<ul class="button">
+    <button type="submit">Create</button>
+</ul>
+</form>
