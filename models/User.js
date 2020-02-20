@@ -11,7 +11,16 @@ const userSchema = new Schema({
   courses: [{ type: String }],
   photo: String,
   isActive: Boolean,
-  posts: []
+  posts: [],
+  status: {
+    type : String,
+    enum :["Pending Confirmation","Active"],
+    default: `Pending Confirmation`
+  },
+  confirmationCode: {
+    type: String,
+   unique: true },
+  email: String,
 },
   {
     timestamps: true
