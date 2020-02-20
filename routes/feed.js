@@ -16,4 +16,15 @@ router.get("/", ensureLogin.ensureLoggedIn("/"), (req, res, next) => {
         })
 });
 
+
+
+
+router.get('/user', (req, res, next) => {
+    User.findById(req.user._id)
+        .then(user => {
+            console.log(user)
+            res.render("userPost", user)
+        })
+
+})
 module.exports = router;

@@ -1,0 +1,39 @@
+<div class="wrapper">
+    <div class="intWrapper">
+        {{#each posts}}
+        <div class="onePost">
+            <div class="userDataGroup">
+                <img src="{{this.creator.photo}}" class="userPhotoPost" alt="">
+                <div class="userData">
+                    <div class="bold">{{this.username}}</div>
+                    <div>{{this.school.name}}</div>
+                    <div>{{courses}}</div>
+                </div>
+
+            </div>
+            <div class="postTitle">{{this.title}}</div>
+            <div class="urlImg">
+                {{#if this.url}}
+                <a href="{{this.url}}"><img src="/images/urlImg.svg" alt=""></a>
+                {{/if}}
+            </div>
+            <div>
+                {{#if this.comment}}
+                {{this.comment}}
+                {{/if}}
+            </div>
+            <br>
+            <div class="fileImg">
+                {{#if this.file}}
+                <a href="{{this.file}}"><img src="/images/file.svg" alt=""></a>
+                {{/if}}
+            </div>
+            <div>
+                {{#if this.img}}
+                <img src="{{this.img}}" class="img_feed" alt="Photo">
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
