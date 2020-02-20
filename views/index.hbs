@@ -12,16 +12,18 @@
 
             </div>
             <div class="postTitle">{{this.title}}</div>
+            <div>
+                {{#if this.text}}
+                {{this.text}}
+                {{/if}}
+            </div>
+
             <div class="urlImg">
                 {{#if this.url}}
                 <a href="{{this.url}}"><img src="/images/urlImg.svg" alt=""></a>
                 {{/if}}
             </div>
-            <div>
-                {{#if this.comment}}
-                {{this.comment}}
-                {{/if}}
-            </div>
+
             <br>
             <div class="fileImg">
                 {{#if this.file}}
@@ -29,9 +31,30 @@
                 {{/if}}
             </div>
             <div>
-                {{#if this.img}}
-                <img src="{{this.img}}" class="img_feed" alt="Photo">
+                {{#if this.imgPath}}
+                <img src="{{this.imgPath}}" class="img_feed" alt="Photo">
                 {{/if}}
+            </div>
+            <div class="comment-length">
+                <img src="/images/comments.svg" alt="">{{this.comments.length}}
+            </div>
+            <div>
+                <ul class="post-comments">
+                    {{#each this.comments}}
+                    <li><img src="{{this.creator.photo}}" /><span>{{this.creator.username}}:</span> {{this.content}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div>
+                <form action="/comment/create" method="POST" id="form-comment">
+                    <div class="comment-box">
+                        <input type="hidden" value="{{this.creator.id}}" name="creator">
+                        <input type="hidden" value="{{this._id}}" name="post">
+                        <input type="text" id="content" name="content" placeholder="Add a comment">
+                    </div>
+                    <button>send</button>
+                </form>
             </div>
         </div>
         {{/each}}

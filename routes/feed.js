@@ -8,22 +8,22 @@ const User = require("../models/User")
 /* GET home page */
 router.get("/", ensureLogin.ensureLoggedIn("/"), (req, res, next) => {
     Posts.find({ $and: [{ school: req.user.school }, { course: req.user.courses[0] }] })
-
+        .sort({ updatedAt: -1 })
         .populate('school')
         .populate('creator')
+        .populate('comments.creator')
         .then(posts => {
             res.render("index", { posts });
         })
 });
 
 
-
-
 router.get('/user', (req, res, next) => {
-    User.findById(req.user._id)
-        .then(user => {
-            console.log(user)
-            res.render("userPost", user)
+    Posts.find({ creator: req.user._id })
+        .populate('creator')
+        .populate('school')
+        .then(postsFound => {
+            res.render("userPost", { postsFound })
         })
 
 })

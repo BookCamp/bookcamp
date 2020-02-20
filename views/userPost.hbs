@@ -1,13 +1,13 @@
 <div class="wrapper">
     <div class="intWrapper">
-        {{#each posts}}
+        {{#each postsFound}}
         <div class="onePost">
             <div class="userDataGroup">
                 <img src="{{this.creator.photo}}" class="userPhotoPost" alt="">
                 <div class="userData">
-                    <div class="bold">{{this.username}}</div>
+                    <div class="bold">{{this.creator.username}}</div>
                     <div>{{this.school.name}}</div>
-                    <div>{{courses}}</div>
+                    <div>{{this.course}}</div>
                 </div>
 
             </div>

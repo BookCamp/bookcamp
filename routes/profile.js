@@ -14,7 +14,8 @@ router.get('/', (req, res, next) => {
 
 router.get('/:userID', (req, res, next) => {
     User.findById(req.params.userID)
-        .populate("school")
+        .populate("user")
+        .populate('creator')
         .then(user => {
             // console.log(user)
             res.render("profile", user)

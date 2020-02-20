@@ -127,6 +127,9 @@ app.use('/profile', profileRoutes);
 const createRoutes = require('./routes/create');
 app.use('/create', createRoutes);
 
+const commentRoutes = require('./routes/comment');
+app.use('/comment', commentRoutes);
+
 
 
 module.exports = app;
