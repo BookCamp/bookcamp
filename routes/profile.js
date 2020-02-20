@@ -5,8 +5,7 @@ const User = require("../models/User");
 
 router.get('/:userID', (req, res, next) => {
     User.findById(req.params.userID).then(user => {
-        console.log(user)
-        res.render("profile",  user )
+        res.render("profile", user)
     })
 })
 

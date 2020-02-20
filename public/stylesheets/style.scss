@@ -22,6 +22,12 @@ a {
   padding-bottom: 5px;
 }
 
+.body_pp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .login_body {
   display: flex;
   flex-direction: column;
@@ -56,7 +62,8 @@ input:focus {
   outline: none;
 }
 
-.login_body ::placeholder {
+.login_body ::placeholder,
+.button_search ::placeholders {
   color: #FCFCFC;
 }
 
@@ -73,6 +80,25 @@ input:focus {
   height: 48px;
   background-repeat: no-repeat;
   margin-bottom: 20px;
+}
+
+.button_search {
+  position: fixed;
+  top: 3vw;
+  background-image: url("../images/boton_search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-bottom: 20px;
+  height: 24px;
+  width: 300px;
+}
+
+.button_search input {
+  width: 300px;
+  padding: 15px 15px 15px 15px;
+  margin-left: 30px;
+  color: #FCFCFC;
 }
 
 .button_mail {
@@ -201,6 +227,10 @@ nav {
   bottom: 0;
 }
 
+nav img {
+  width: 20px;
+}
+
 .userData {
   display: flex;
   flex-direction: column;
@@ -220,12 +250,13 @@ nav {
 }
 
 .wrapper {
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #FCFCFC;
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   overflow: scroll;
 }
 
