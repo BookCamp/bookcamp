@@ -9,9 +9,10 @@ router.get('/', (req, res, next) => {
 
 
 //search
-// router.post('/search', (req, res, next) => {
-// let query = (req.body.search)
-// Posts.find({$in: title:query})
+// router.get('/search', (req, res, next) => {
+// let query = req.body.search
+// //console.log(query)
+// Posts.find({$in: {title:{query}}})
 // .then(posts => {
 //  res.render("index", {posts} )
 // })

@@ -6,6 +6,7 @@ const User = require("../models/User");
 
 router.get('/', (req, res, next) => {
     User.findById(req.user._id)
+    .populate("school")
         .then(user => {
             res.render("profile", user)
         })
@@ -21,6 +22,7 @@ router.get('/:userID', (req, res, next) => {
             res.render("profile", user)
         })
 })
+
 
 
 

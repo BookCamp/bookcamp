@@ -113,11 +113,6 @@ passport.use(
 );
 
 
-// const imgProgress = document.getElementById('img-bar');
-  // onUploadProgress(e){
-  // const progress = (e.loaded * 100) / e.total;
-  // imgProgress = setAttribute('value'.progress);
-  // }
 
 const index = require('./routes/index');
 app.use('/', index);

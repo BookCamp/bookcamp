@@ -37,3 +37,5 @@ favButtons.forEach(button => button.addEventListener('click', function (e) {
     .then(() => console.log(favPosts))
 }))
 
+let date = new Date();
+document.getElementById("test").innerHTML = date.toUTCString();

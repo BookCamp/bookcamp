@@ -1,13 +1,28 @@
-<h2>Profile</h2>
+<div class="wrapper">
+    <div class="intWrapper">
+        <div class="profile-wrapper">
 
+            <h2>Profile</h2>
 
-<a href="/profile/edit/{{this.id}}">Edit</a>
-<a href="/edit/delete/{{this.id}}">Delete</a>
+            <img class="prof" src={{this.photo}} alt="">
 
+            <div class="profileEdit">
+                <h2>{{this.username}}</h2>
+                <a href="/profile/edit/{{this.id}}"><img class="pen" src="../images/pencil.svg">Edit</a>
+            </div>
 
-<img src={{this.photo}} alt="">
-<p>{{this.username}}</p>
-<p>{{this.email}}</p>
-<p>{{this.birthDate}}</p>
-<p>{{this.school.0.name}}</p>
-<p>{{this.courses}}</p>
+            <p class="mail">{{this.email}}</p>
+            <p id="test"class="date">{{this.birthDate}}</p>
+            <p class="school">{{this.school.0.name}}</p>
+            <p class="course">{{this.courses}}</p>
+
+            <a class="out" href="/auth/logout">Log Out!</a>
+
+            <div>
+                <div class="garbage">
+                    <a href="/edit/delete/{{this.id}}"><img class="bs" src="../images/bs.svg">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

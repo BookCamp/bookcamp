@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const passport = require('passport');
 const router = express.Router();
@@ -100,8 +101,8 @@ router.post("/signup", (req, res, next) => {
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-        user: 'daniel.ronhacker@gmail.com',
-        pass: 'Almeria15'
+        user: process.env.USER,
+        pass: process.env.PASSWORD-NODE
       }
     });
 
@@ -111,7 +112,7 @@ router.post("/signup", (req, res, next) => {
       subject: `lab-nodemailer`,
       text: `esto es Nodemailer`,
       //change url and text
-      html: `<a href="http://localhost:3000/auth/confirm/${confirmationCode}">Esta es Nodemailer</a>`
+      html: `<a href="https://bookcamp.herokuapp.com/auth/confirm/${confirmationCode}">Esta es Nodemailer</a>`
     })
       .then(info => res.render('message', {
         email,
