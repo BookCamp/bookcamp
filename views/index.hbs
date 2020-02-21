@@ -36,10 +36,14 @@
                 {{/if}}
             </div>
             <div class="comment-length">
+                <div class="divComment"><img src="/images/comments.svg" alt="">{{this.comments.length}}</div>
 
-                <img src="/images/comments.svg" alt="">{{this.comments.length}}
-                <a href="" id="{{this._id}}" class="favbutton"><img src="/images/heart_favorite.svg"
-                        alt="">{{this.comments.length}}</a>
+                <a href="" id="{{this._id}}" class="favbutton">
+                    <svg class="heart" viewBox="0 0 22 19" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.9649 18.3659C10.8243 18.3659 10.6134 18.2956 10.4728 18.2254C10.1214 18.0145 1.05431 12.9538 0.0702875 7.19021C-0.210863 5.29245 0.351438 3.53526 1.75719 1.91864C3.09265 0.512893 4.56869 -0.119695 6.11502 0.02088C8.29393 0.30203 9.98083 2.12951 10.9649 3.53526C11.9489 2.19979 13.7061 0.372318 15.8147 0.02088C17.361 -0.119695 18.8371 0.442605 20.1725 1.91864C21.6486 3.46497 22.2109 5.22216 21.8594 7.19021C20.9457 12.9538 11.8786 18.0145 11.5272 18.2254C11.3163 18.2956 11.1757 18.3659 10.9649 18.3659ZM5.55272 2.12951C4.77955 2.12951 4.07668 2.55123 3.30351 3.32439C2.31949 4.37871 1.89776 5.5736 2.10863 6.83877C2.74121 10.564 8.36422 14.5001 10.9649 16.0464C13.6358 14.5001 19.1885 10.564 19.8211 6.83877C20.0319 5.5736 19.6102 4.449 18.6262 3.32439C17.7827 2.41066 17.0096 1.98893 16.0958 2.12951C14.1981 2.41066 12.4409 5.08158 11.9489 6.06561C11.5974 6.76848 10.4728 6.76848 10.0511 6.06561C9.5591 5.08158 7.73163 2.41066 5.83387 2.12951C5.76358 2.12951 5.69329 2.12951 5.55272 2.12951Z" />
+                    </svg>
+                    {{this.comments.length}}</a>
             </div>
             <div>
                 <ul class="post-comments">
@@ -51,12 +55,14 @@
             </div>
             <div>
                 <form action="/comment/create" method="POST" id="form-comment">
-                    <div class="comment-box">
-                        <input type="hidden" value="{{this.creator.id}}" name="creator">
-                        <input type="hidden" value="{{this._id}}" name="post">
-                        <input type="text" id="content" name="content" placeholder="Add a comment">
+                    <div class="commentDiv">
+                        <div class="comment-box">
+                            <input type="hidden" value="{{this.creator.id}}" name="creator">
+                            <input type="hidden" value="{{this._id}}" name="post">
+                            <input type="text" id="content" name="content" placeholder="Add a comment">
+                        </div>
+                        <button>send</button>
                     </div>
-                    <button>send</button>
                 </form>
             </div>
         </div>

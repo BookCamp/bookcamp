@@ -24,6 +24,7 @@ a {
 
 .main-wrapper {
   max-width: 500px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +58,7 @@ a {
 
 input {
   background-color: rgba($color: #ffffff, $alpha: 0);
+  width: 100%;
   border: 0;
   font-size: 14px;
 }
@@ -91,10 +93,22 @@ input:focus {
   margin-bottom: 20px;
 }
 
+.commentDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .comment-box {
-  background-color: #dfdfdf;
-  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F2F2F2;
+  margin: 5px 0;
   border-radius: 20px;
+  padding: 5px 0;
 }
 
 .comment-box input {
@@ -192,7 +206,6 @@ button {
   background-color: #009386;
   padding: 10px 10px;
   width: 200px;
-  margin-bottom: 20px;
   border-radius: 20px;
   color: #fcfcfc;
   border: 0;
@@ -232,7 +245,7 @@ button {
 }
 
 .postTitle {
-  padding: 10px 10px;
+  padding: 5px 0px;
 }
 
 nav {
@@ -259,11 +272,15 @@ nav img {
 .userDataGroup {
   display: flex;
   align-items: center;
-  padding: 20px 0 20px 20px;
+  padding: 0px 0 10px 10px;
 }
 
 .intWrapper {
   width: 90%;
+}
+
+.btn-content {
+  color: black;
 }
 
 .wrapper {
@@ -289,6 +306,23 @@ nav img {
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.comment-length {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .divComment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+    }
+  }
 }
 
 .fileImg img,
@@ -322,5 +356,78 @@ nav img {
     color: #009386;
     font-weight: bold;
     margin-right: 10px;
+  }
+}
+
+.profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 50%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+}
+
+.heart {
+  width: 22px;
+  height: 19px;
+  fill: #009386;
+}
+
+.fav {
+  fill: red;
+}
+
+.create {
+  color: #848484;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .textArea {
+    padding: 10px;
+    width: 90%;
+    height: 15vh;
+    border: 0;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    border: #F2F2F2 1px solid;
+    border-radius: 10px;
+  }
+
+  .formCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+.createButtons {
+  margin: 20px 0;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    height: 50px;
   }
 }

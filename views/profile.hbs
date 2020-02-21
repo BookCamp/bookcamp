@@ -1,13 +1,15 @@
-<h2>Profile</h2>
+<div class="profile-wrapper">
+    <h2>Profile</h2>
 
 
-<a href="/profile/edit/{{this.id}}">Edit</a>
-<a href="/edit/delete/{{this.id}}">Delete</a>
+    <a href="/profile/edit/{{this.id}}">Edit</a>
+    <a href="/edit/delete/{{this.id}}">Delete</a>
 
 
-<img src={{this.photo}} alt="">
-<p>{{this.username}}</p>
-<p>{{this.email}}</p>
-<p>{{this.birthDate}}</p>
-<p>{{this.school.0.name}}</p>
-<p>{{this.courses}}</p>
+    <img src={{this.photo}} alt="">
+    <p>{{this.username}}</p>
+    <p>{{this.email}}</p>
+    <p>{{this.birthDate}}</p>
+    <p>{{this.school.0.name}}</p>
+    <p>{{this.courses}}</p>
+</div>

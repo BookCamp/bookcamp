@@ -114,10 +114,10 @@ passport.use(
 
 
 // const imgProgress = document.getElementById('img-bar');
-  // onUploadProgress(e){
-  // const progress = (e.loaded * 100) / e.total;
-  // imgProgress = setAttribute('value'.progress);
-  // }
+// onUploadProgress(e){
+// const progress = (e.loaded * 100) / e.total;
+// imgProgress = setAttribute('value'.progress);
+// }
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -139,6 +139,9 @@ app.use('/create', createRoutes);
 
 const commentRoutes = require('./routes/comment');
 app.use('/comment', commentRoutes);
+
+const favRoutes = require('./routes/favorites');
+app.use('/favorites', favRoutes);
 
 
 

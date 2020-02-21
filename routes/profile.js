@@ -17,7 +17,6 @@ router.get('/:userID', (req, res, next) => {
         .populate("user")
         .populate('creator')
         .then(user => {
-            // console.log(user)
             res.render("profile", user)
         })
 })

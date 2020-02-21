@@ -25,15 +25,7 @@ router.get('/user', (req, res, next) => {
         .then(postsFound => {
             res.render("userPost", { postsFound })
         })
-
 })
 
-router.post('/favorite', (req, res) => {
-    let favPost = req.body;
-    console.log("Hola")
-    User.findByIdAndUpdate(req.user._id, { $push: { favoritePosts: favPost } })
-        .then(() => res.json({ ok: true }))
-        .catch((err) => res.json(err))
-});
 
 module.exports = router;

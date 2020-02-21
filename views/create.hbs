@@ -1,50 +1,63 @@
-<h2>create new content</h2>
+<div class="wrapper">
+    <div class="intWrapper create">
 
-<a href="" class="btn-content">Comment</a>
-<a href="" class="btn-content">Photo</a>
-<a href="" class="btn-content">File</a>
-<a href="" class="btn-content">Url</a>
+        <h2>What do you want to share?</h2>
+        <div class="createButtons">
+            <a href="" class="btn-content" data-type="comment"><img src="/images/newComment.svg" alt=""></a>
+            <a href="" class="btn-content" data-type="photo"><img src="/images/photo.svg" alt=""></a>
+            <a href="" class="btn-content" data-type="file"><img src="/images/file2.svg" alt=""></a>
+            <a href="" class="btn-content" data-type="url"><img src="/images/urlImg.svg" alt=""></a>
+        </div>
+        <div>
+            <form class="hidden type-form" action="/create" method="POST" id="comment" enctype="multipart/form-data">
+                <div class="formCenter">
+                    <textarea name="text" class="textArea" placeholder="Something to say?"></textarea>
+                    <input type="hidden" value="comment" name="type">
+                    <ul class="button">
+                        <button type="submit">Create</button>
+                    </ul>
+                </div>
+            </form>
+        </div>
 
-<br>
-<br>
+        <div>
+            <form class="hidden type-form" action="/create" method="POST" id="photo" enctype="multipart/form-data">
+                <div class="formCenter">
+                    <input type="hidden" value="photo" name="type">
+                    <textarea name="title" class="textArea" placeholder="Something to say?"></textarea>
+                    <input type="file" name="photo">
+                    <ul class="button">
+                        <button type="submit">Create</button>
+                    </ul>
+                </div>
+            </form>
+        </div>
 
+        <div>
+            <form class="hidden type-form" action="/create" method="POST" id="file" enctype="multipart/form-data">
+                <div class="formCenter">
+                    <input type="hidden" value="file" name="type">
+                    <textarea name="title" class="textArea" placeholder="Something to say?"></textarea>
+                    <input type="file" name="photo">
+                    <ul class="button">
+                        <button type="submit">Create</button>
+                    </ul>
+                </div>
+            </form>
 
+        </div>
+        <div>
+            <form class="hidden type-form" action="/create" method="POST" id="url" enctype="multipart/form-data">
+                <div class="formCenter">
+                    <input type="hidden" value="url" name="type">
+                    <textarea name="title" class="textArea" placeholder="Something to say?"></textarea>
+                    <textarea name="url" class="textArea" placeholder="Write here your URL"></textarea>
+                    <ul class="button">
+                        <button type="submit">Create</button>
+                    </ul>
+                </div>
+            </form>
+        </div>
 
-<form class="hidden type-form" action="/create" method="POST" id="comment" enctype="multipart/form-data">
-    <textarea name="text"></textarea>
-    <input type="hidden" value="comment" name="type">
-    <ul class="button">
-        <button type="submit">Create</button>
-    </ul>
-</form>
-
-
-
-<form class="hidden type-form" action="/create" method="POST" id="photo" enctype="multipart/form-data">
-    <input type="hidden" value="photo" name="type">
-    <textarea name="title"></textarea>
-    <input type="file" name="photo">
-    <ul class="button">
-        <button type="submit">Create</button>
-    </ul>
-</form>
-
-
-<form class="hidden type-form" action="/create" method="POST" id="file" enctype="multipart/form-data">
-    <input type="hidden" value="file" name="type">
-    <textarea name="title"></textarea>
-    <input type="file" name="photo">
-    <ul class="button">
-        <button type="submit">Create</button>
-    </ul>
-</form>
-
-
-<form class="hidden type-form" action="/create" method="POST" id="url" enctype="multipart/form-data">
-    <input type="hidden" value="url" name="type">
-    <textarea name="title"></textarea>
-    <textarea name="url"></textarea>
-    <ul class="button">
-        <button type="submit">Create</button>
-    </ul>
-</form>
+    </div>
+</div>

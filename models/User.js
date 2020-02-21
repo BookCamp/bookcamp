@@ -12,7 +12,7 @@ const userSchema = new Schema({
   photo: { type: String, default: `https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582141469/photoDefault_qpyvax.png` },
   isActive: Boolean,
   posts: [],
-  favoritePosts: [],
+  favoritePosts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
   status: {
     type: String,
     enum: ["Pending Confirmation", "Active"],
