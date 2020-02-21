@@ -9,13 +9,13 @@ router.get('/', (req, res, next) => {
 
 
 //search
-router.post('/search', (req, res, next) => {
-let query = (req.body.search)
-Posts.find({$in: title:query})
-.then(posts => {
- res.render("index", {posts} )
-})
-.catch(err => console.log(err))
-})
+// router.post('/search', (req, res, next) => {
+// let query = (req.body.search)
+// Posts.find({$in: title:query})
+// .then(posts => {
+//  res.render("index", {posts} )
+// })
+// .catch(err => console.log(err))
+// })
 
 module.exports = router;

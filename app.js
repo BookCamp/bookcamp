@@ -8,6 +8,7 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
+const axios = require('axios');
 
 const session = require("express-session");
 const MongoStore = require('connect-mongo')(session);
@@ -111,6 +112,12 @@ passport.use(
   )
 );
 
+
+// const imgProgress = document.getElementById('img-bar');
+  // onUploadProgress(e){
+  // const progress = (e.loaded * 100) / e.total;
+  // imgProgress = setAttribute('value'.progress);
+  // }
 
 const index = require('./routes/index');
 app.use('/', index);
