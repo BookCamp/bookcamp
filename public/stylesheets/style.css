@@ -303,11 +303,41 @@ nav img {
 .profile-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center; }
-  .profile-wrapper img {
-    width: 50%;
-    object-fit: contain;
-    border-radius: 50%; }
+  align-items: center;
+  width: 100%; }
+  .profile-wrapper .prof {
+    width: 167px;
+    height: 171px;
+    border-radius: 50%;
+    object-fit: cover; }
+  .profile-wrapper .profileEdit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .profile-wrapper h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: #848484;
+    margin-right: 10px; }
+  .profile-wrapper .mail,
+  .profile-wrapper .date,
+  .profile-wrapper .course {
+    font-size: 14px;
+    margin: 17px 0; }
+  .profile-wrapper .pen {
+    width: 20px;
+    height: 20px; }
+  .profile-wrapper .bs {
+    width: 20px;
+    height: 20px; }
+  .profile-wrapper .out {
+    color: #6ba143;
+    margin: 20px 0; }
+  .profile-wrapper .garbage {
+    margin-left: 190px; }
 
 .heart {
   width: 22px;

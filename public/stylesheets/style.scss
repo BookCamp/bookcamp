@@ -363,13 +363,61 @@ nav img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
-  img {
-    width: 50%;
-    object-fit: contain;
+  // height:80vh;
+  .prof {
+    width: 167px;
+    height: 171px;
     border-radius: 50%;
+    object-fit: cover;
+
+  }
+
+  .profileEdit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    color: #848484;
+    margin-right: 10px;
+  }
+
+  .mail,
+  .date,
+  .course {
+    font-size: 14px;
+    margin: 17px 0;
+  }
+
+  .pen {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bs {
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .out {
+    color: #6ba143;
+    margin: 20px 0;
+  }
+
+  .garbage {
+    margin-left: 190px;
   }
 }
+
 
 .heart {
   width: 22px;
