@@ -137,6 +137,9 @@ app.use('/edit', EditRoutes);
 const createRoutes = require('./routes/create');
 app.use('/create', createRoutes);
 
+const commentRoutes = require('./routes/comment');
+app.use('/comment', commentRoutes);
+
 
 
 module.exports = app;

@@ -12,14 +12,16 @@ const userSchema = new Schema({
   photo: { type: String, default: `https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582141469/photoDefault_qpyvax.png` },
   isActive: Boolean,
   posts: [],
+  favoritePosts: [],
   status: {
-    type : String,
-    enum :["Pending Confirmation","Active"],
+    type: String,
+    enum: ["Pending Confirmation", "Active"],
     default: `Pending Confirmation`
   },
   confirmationCode: {
     type: String,
-   unique: true },
+    unique: true
+  },
   email: String,
 },
   {

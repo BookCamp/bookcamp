@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const PostSchema = new Schema({
     title: String,
+    text: String,
     type: { type: String, enum: ['Photo', 'File', 'Comment', 'URL', 'Location'] },
     url: String,
     file: String,
@@ -13,6 +14,7 @@ const PostSchema = new Schema({
     course: String,
     imgName: String,
     imgPath: String,
+    comments: [{ creator: { type: Schema.Types.ObjectId, ref: "User" }, content: String }]
 }, {
     timestamps: true
 });

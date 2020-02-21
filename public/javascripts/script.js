@@ -4,27 +4,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
-if(document.querySelector('#schools')){
+if (document.querySelector('#schools')) {
   let changeCourse = document.querySelector('#schools');
-  changeCourse.onchange = function(e){
+  changeCourse.onchange = function (e) {
     console.log(changeCourse.value)
     let activeSel = document.querySelector(`.${changeCourse.options[changeCourse.selectedIndex].text}`)
-    activeSel.setAttribute(`name`,`courses`)
+    activeSel.setAttribute(`name`, `courses`)
     let otherSel = document.querySelectorAll(`.school-option`)
     otherSel.forEach(ele => ele.classList.add('hidden'))
     activeSel.classList.remove('hidden')
-  
-  //changeCourse.classList.toggle('hidden');
+
+    //changeCourse.classList.toggle('hidden');
   }
 }
 
 let bottons = document.querySelectorAll(`.btn-content`)
-let forms =  document.querySelectorAll(`.type-form`)
-bottons.forEach(botton => botton.addEventListener('click', function(e){
+let forms = document.querySelectorAll(`.type-form`)
+bottons.forEach(botton => botton.addEventListener('click', function (e) {
   e.preventDefault()
   forms.forEach(form => form.classList.add('hidden'))
-    document.querySelector(`#${botton.innerText.toLowerCase()}`).classList.remove('hidden')
-  })
+  document.querySelector(`#${botton.innerText.toLowerCase()}`).classList.remove('hidden')
+})
 )
 
- 
+let favButtons = document.querySelectorAll(`.favbutton`)
+favButtons.forEach(button => button.addEventListener('click', function (e) {
+  let favPosts = {
+    id: button.id
+  }
+  console.log(favPosts)
+  axios.post('/feed/favorite', favPosts)
+    .then(() => console.log(favPosts))
+}))
+

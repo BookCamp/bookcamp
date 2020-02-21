@@ -11,7 +11,7 @@
 
 
 <form class="hidden type-form" action="/create" method="POST" id="comment" enctype="multipart/form-data">
-    <textarea name="title"></textarea>
+    <textarea name="text"></textarea>
     <input type="hidden" value="comment" name="type">
     <ul class="button">
         <button type="submit">Create</button>
@@ -21,31 +21,30 @@
 
 
 <form class="hidden type-form" action="/create" method="POST" id="photo" enctype="multipart/form-data">
- <input type="hidden" value="photo" name="type">
-<textarea name="title"></textarea>
-<input type="file" name="photo"> 
-{{!-- <progress id="img-bar" value="0" max="100"></progress>  --}} --}}
-<ul class="button">
-    <button type="submit">Create</button>
-</ul>
+    <input type="hidden" value="photo" name="type">
+    <textarea name="title"></textarea>
+    <input type="file" name="photo">
+    <ul class="button">
+        <button type="submit">Create</button>
+    </ul>
 </form>
 
 
 <form class="hidden type-form" action="/create" method="POST" id="file" enctype="multipart/form-data">
- <input type="hidden" value="file" name="type">
-<textarea name="title"></textarea>
-<input type="file">
-<ul class="button">
-    <button type="submit">Create</button>
-</ul>
+    <input type="hidden" value="file" name="type">
+    <textarea name="title"></textarea>
+    <input type="file" name="photo">
+    <ul class="button">
+        <button type="submit">Create</button>
+    </ul>
 </form>
 
 
 <form class="hidden type-form" action="/create" method="POST" id="url" enctype="multipart/form-data">
- <input type="hidden" value="url" name="type">
-<textarea name="title"></textarea>
-<input type="file">
-<ul class="button">
-    <button type="submit">Create</button>
-</ul>
+    <input type="hidden" value="url" name="type">
+    <textarea name="title"></textarea>
+    <textarea name="url"></textarea>
+    <ul class="button">
+        <button type="submit">Create</button>
+    </ul>
 </form>

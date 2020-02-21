@@ -17,7 +17,7 @@ Post.collection.drop()
 let post1 = {
     title: 'Que bien me lo paso en el Curso',
     type: 'Photo',
-    img: 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'
+    imgPath: 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'
 }
 let post2 = {
     title: 'Mira que ebook he encontrado!',
@@ -26,7 +26,7 @@ let post2 = {
 }
 let post3 = {
     type: 'Comment',
-    comment: 'Hoy ha sido un día muy grande, hemos realizado el Seed!!'
+    text: 'Hoy ha sido un día muy grande, hemos realizado el Seed!!'
 }
 let post4 = {
     title: 'Mirar que escuela he encontrado:',

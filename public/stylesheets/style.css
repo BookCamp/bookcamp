@@ -1,14 +1,15 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
-  background-image: url("../images/background_gradient.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #bababa; }
 
 a {
-  color: #FCFCFC; }
+  color: #fcfcfc; }
 
 .hidden {
   display: none; }
@@ -17,15 +18,24 @@ a {
   font-weight: bold;
   padding-bottom: 5px; }
 
-.body_pp {
+.main-wrapper {
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  background-image: url("../images/background_gradient.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .login_body {
+  width: 500px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  background-image: url("../images/background_gradient.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .login_body #form-container {
   display: flex;
@@ -45,17 +55,17 @@ input {
 .login_body input {
   padding: 15px;
   margin-left: 30px;
-  color: #FCFCFC; }
+  color: #fcfcfc; }
 
 input:focus {
   outline: none; }
 
 .login_body ::placeholder,
 .button_search ::placeholders {
-  color: #FCFCFC; }
+  color: #fcfcfc; }
 
 .error-message {
-  color: #FCFCFC;
+  color: #fcfcfc;
   text-transform: uppercase;
   margin-bottom: 20px; }
 
@@ -67,9 +77,17 @@ input:focus {
   background-repeat: no-repeat;
   margin-bottom: 20px; }
 
+.comment-box {
+  background-color: #dfdfdf;
+  margin-top: 10px;
+  border-radius: 20px; }
+
+.comment-box input {
+  padding-left: 30px; }
+
 .button_search {
   position: fixed;
-  top: 3vw;
+  top: 1vw;
   background-image: url("../images/boton_search.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -82,7 +100,7 @@ input:focus {
   width: 300px;
   padding: 15px 15px 15px 15px;
   margin-left: 30px;
-  color: #FCFCFC; }
+  color: #fcfcfc; }
 
 .button_mail {
   background-image: url("../images/Boton_email.svg"); }
@@ -93,7 +111,7 @@ input:focus {
 .button_login {
   width: 150px;
   height: 47px;
-  background: #FCFCFC;
+  background: #fcfcfc;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   font-weight: bold;
@@ -105,7 +123,6 @@ input:focus {
 .login_google {
   width: 209px;
   height: 47px;
-  background-image: url("../images/login_google.svg");
   margin-bottom: 50px; }
 
 .account-message {
@@ -113,7 +130,7 @@ input:focus {
   font-family: Roboto;
   font-size: 14px;
   line-height: 16px;
-  color: #EDEEF0;
+  color: #edeef0;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); }
 
 .signup {
@@ -121,7 +138,7 @@ input:focus {
   margin: 0;
   width: 100%;
   height: 100vh;
-  background-color: #FCFCFC; }
+  background-color: #fcfcfc; }
 
 .logo_verde {
   margin: 50px 0; }
@@ -149,18 +166,18 @@ button {
   width: 200px;
   margin-bottom: 20px;
   border-radius: 20px;
-  color: #FCFCFC;
+  color: #fcfcfc;
   border: 0;
   text-transform: uppercase;
   font-weight: bold;
   text-align-last: center; }
 
 .signup button {
-  background-color: #6BA143; }
+  background-color: #6ba143; }
 
 .signup p,
 .signup a {
-  color: #6BA143; }
+  color: #6ba143; }
 
 .bottom_signup {
   position: absolute;
@@ -172,10 +189,10 @@ button {
 .img_feed {
   align-items: center;
   width: 100%;
-  background-color: #FCFCFC; }
+  background-color: #fcfcfc; }
 
 .onePost {
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   padding: 20px 10px;
   margin-bottom: 20px;
   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1); }
@@ -187,8 +204,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   bottom: 0; }
 
@@ -200,7 +216,7 @@ nav img {
   flex-direction: column;
   align-items: flex-start;
   padding-left: 20px;
-  background-color: #FCFCFC; }
+  background-color: #fcfcfc; }
 
 .userDataGroup {
   display: flex;
@@ -208,15 +224,15 @@ nav img {
   padding: 20px 0 20px 20px; }
 
 .intWrapper {
-  width: 90vw; }
+  width: 90%; }
 
 .wrapper {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #FCFCFC;
-  width: 100vw;
+  background-color: #fcfcfc;
+  width: 100%;
   height: 80vh;
   overflow: scroll; }
 
@@ -235,5 +251,26 @@ nav img {
 .fileImg img,
 .urlImg img {
   width: 100px; }
+
+.post-comments {
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+  .post-comments li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(107, 161, 67, 0.1);
+    display: flex;
+    align-items: center; }
+  .post-comments img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px; }
+  .post-comments span {
+    color: #009386;
+    font-weight: bold;
+    margin-right: 10px; }
 
 /*# sourceMappingURL=style.css.map */
