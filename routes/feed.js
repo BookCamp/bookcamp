@@ -18,7 +18,7 @@ router.get("/", ensureLogin.ensureLoggedIn("/"), (req, res, next) => {
 });
 
 
-router.get('/user', (req, res, next) => {
+router.get('/user', ensureLogin.ensureLoggedIn(), (req, res, next) => {
     Posts.find({ creator: req.user._id })
         .populate('creator')
         .populate('school')

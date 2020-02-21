@@ -20,9 +20,9 @@ let post1 = {
     imgPath: 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'
 }
 let post2 = {
-    title: 'Mira que ebook he encontrado!',
+    title: 'Os paso un PDF para que repaseis el CRUD:',
     type: 'File',
-    file: 'http://www.agirregabiria.net/g/sylvainaitor/principito.pdf'
+    file: 'https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582289863/Repaso_CRUD_l09dw0.pdf'
 }
 let post3 = {
     type: 'Comment',

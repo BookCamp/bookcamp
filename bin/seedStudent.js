@@ -27,7 +27,7 @@ const student = [
         password: hash1,
         birthDate: "1986-05-07",
         course: ["Web Development FullStack"],
-        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582141758/IMG_3849_tyruhw.jpg",
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582287612/Low_IMG_3849_aiibtq.jpg",
         hobbies: ["tenis", "futbol", "viajar"]
 
 
@@ -38,59 +38,59 @@ const student = [
         password: hash1,
         birthDate: "1984-07-08",
         course: ["Web Development FullStack"],
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582287599/low_IMG_3876_kzhl5t.jpg",
         hobbies: ["cine", "senderismo", "musica"]
 
 
     },
     {
-        username: "Baloo",
+        username: "Franky",
         email: "baloo32@yahoo.com",
         password: hash1,
         birthDate: "1988-09-17",
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582288545/low_franky_ciq8ju.jpg",
         course: ["UX/UI Design"],
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQxXeeUYw3sjBGqVpKAo6Ol7ih8S5CJ2BY-5mBiKHeXGGSP1qor",
         hobbies: ["tecnologias", "musica"]
 
     },
     {
-        username: "Cindy27",
+        username: "Cindy",
         email: "cindy_27@gmail.com",
         password: hash1,
         birthDate: "1993-06-02",
         course: ["UX/UI Design"],
-        photo: "https://upload.wikimedia.org/wikipedia/commons/b/be/Perfil-Berna.jpg",
         hobbies: ["bailar", "viajar", "cine"]
 
 
     },
     {
-        username: "Charly",
+        username: "Fernando Comet",
         email: "elchar@yahoo.com",
         password: hash1,
         birthDate: "1980-07-20",
         course: ["Data Analytics"],
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4Gn2LKw0ANggu71b_6Q-PCFhPEB9W9qJpqzxzbgPXIcCKxtik",
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582288546/low_fer_kqr6jj.jpg",
         hobbies: ["musica", "series", "leer"]
 
 
     },
     {
-        username: "Pablo",
+        username: "Manu Fernández",
         email: "current@hotmail.com",
         password: hash1,
         birthDate: "1989-10-01",
         course: ["Data Analytics"],
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRIH8Woz_16Y8WH0qSKj0IuXmLFHc7zeSGx-7tbMzZbv-iVYo_d",
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582288549/low_manu_f5u6vs.jpg",
         hobbies: ["natacion", "musica", "tecnologias"]
 
     },
     {
-        username: "Maria",
+        username: "Armando Momo",
         email: "mary_35@hotmail.com",
         password: hash1,
         birthDate: "1990-12-09",
         course: ["Data Science"],
-        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTNuZgDXdLV5VnaHBvwFX7CDMDbZ_yRUFwLAs6Gs6NCTP6VE6Fx",
+        photo: "https://res.cloudinary.com/dtdx0w1qa/image/upload/v1582288849/low_armando_q3ueso.jpg",
         hobbies: ["gym", "musica", "bailar"]
 
     },
